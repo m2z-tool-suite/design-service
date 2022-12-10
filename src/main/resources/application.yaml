@@ -1,0 +1,27 @@
+server:
+  port: 8080
+
+spring:
+  application:
+    name: design-service
+  jpa:
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.MySQLDialect
+    generate-ddl: true
+    hibernate:
+      ddl-auto: update
+  datasource:
+    url: jdbc:mysql://localhost:3306/m2z-design?createDatabaseIfNotExist=true
+    username: root
+    password: root
+  jackson:
+    default-property-inclusion: non_empty
+
+springdoc:
+  api-docs:
+    enabled: true
+    path: /api-docs
+    version: openapi_3_0
+  swagger-ui:
+    path: /swagger-ui.html

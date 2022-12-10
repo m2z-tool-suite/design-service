@@ -1,2 +1,3 @@
-# design-service
+# Design service
+
 M2Z Tool Suite service for software product design

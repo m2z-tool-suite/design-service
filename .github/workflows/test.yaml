@@ -5,25 +5,10 @@ on:
       - main
   pull_request:
     types: [ opened, synchronize, reopened ]
-env:
-  POSTGRESQL_VERSION: 13.1
-  POSTGRESQL_DB: postgres
-  POSTGRESQL_USER: root
-  POSTGRESQL_PASSWORD: root
 jobs:
   CI:
     name: Quality Check
     runs-on: ubuntu-latest
-#    services:
-#      postgres:
-#        image: postgres:13.1
-#        env:
-#          POSTGRES_DB: ${{ env.POSTGRESQL_DB }}
-#          POSTGRES_USER: ${{ env.POSTGRESQL_USER }}
-#          POSTGRES_PASSWORD: ${{ env.POSTGRESQL_PASSWORD }}
-#        ports:
-#          - 5432:5432
-#        options: --health-cmd pg_isready --health-interval 10s --health-timeout 5s --health-retries 5
     steps:
       - name: Slack Notification - Job Started
         uses: 8398a7/action-slack@v3
