@@ -19,7 +19,7 @@ public class Requirement extends BaseEntity<Long> {
     private String title;
 
     @Lob
-    @Column(nullable = false)
+    @Column(nullable = false, columnDefinition = "LONGTEXT")
     private String description;
 
     @ManyToOne(optional = false)

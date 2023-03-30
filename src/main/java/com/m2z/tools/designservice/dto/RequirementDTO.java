@@ -27,6 +27,9 @@ public class RequirementDTO extends BaseDTO<Long> {
     @NotBlank(message = "Stakeholders are mandatory")
     private String stakeholders;
 
+    @NotNull(message = "Risk is mandatory")
+    private RequirementRiskDTO risk;
+
     @NotNull(message = "Status is mandatory")
     private RequirementStatusDTO status;
 

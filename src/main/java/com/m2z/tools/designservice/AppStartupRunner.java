@@ -25,7 +25,7 @@ public class AppStartupRunner implements ApplicationRunner {
 
     private final List<String> requirementTypes = List.of("Functional", "Nonfunctional");
     private final List<String> requirementPriorities =
-            List.of("Essential", "Very deseriable", "Deseriable", "Optional", "Undeseriable");
+            List.of("Essential", "Very desirable", "Desirable", "Optional", "Undesirable");
     private final List<String> requirementRisks = List.of("High", "Medium", "Low");
     private final List<String> requirementStatuses = List.of("Draft", "Defined", "Confirmed");
 

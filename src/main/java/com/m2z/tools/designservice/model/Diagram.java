@@ -18,8 +18,10 @@ public class Diagram extends BaseEntity<Long> {
     private String title;
 
     @Lob
-    @Column(nullable = false)
+    @Column(nullable = false, columnDefinition = "LONGTEXT")
     private String description;
 
-    @Lob private String data;
+    @Lob
+    @Column(columnDefinition = "LONGTEXT")
+    private String data;
 }
