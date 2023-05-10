@@ -12,6 +12,9 @@ import lombok.Setter;
 @Getter
 @Setter
 public class RequirementDTO extends BaseDTO<Long> {
+    @NotBlank(message = "Project is mandatory")
+    private String project;
+
     @NotBlank(message = "Title is mandatory")
     private String title;
 

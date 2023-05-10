@@ -15,6 +15,9 @@ import lombok.Setter;
 @Setter
 public class Diagram extends BaseEntity<Long> {
     @Column(nullable = false)
+    private String project;
+
+    @Column(nullable = false)
     private String title;
 
     @Lob

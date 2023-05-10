@@ -1,5 +1,6 @@
 .gradle
 /build/
+/m2z-security/build/
 
 # Ignore Gradle GUI config
 gradle-app.setting
