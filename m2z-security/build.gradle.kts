@@ -1,3 +1,5 @@
+import org.springframework.boot.gradle.tasks.bundling.BootJar
+
 plugins {
     java
     application
@@ -24,13 +26,13 @@ repositories {
 }
 
 dependencies {
-    implementation("org.springframework.boot:spring-boot-starter-security:3.0.0")
-    testImplementation("org.springframework.security:spring-security-test:3.0.0")
+    implementation("org.springframework.boot:spring-boot-starter-security:3.0.4")
+    testImplementation("org.springframework.security:spring-security-test:6.0.2")
     implementation("com.nimbusds:nimbus-jose-jwt:9.31")
-    compileOnly("org.projectlombok:lombok:1.18.24")
-    annotationProcessor("org.projectlombok:lombok:1.18.24")
-    annotationProcessor("org.springframework.boot:spring-boot-configuration-processor:3.0.0")
-    implementation("org.springframework.boot:spring-boot-starter-web:3.0.0")
+    compileOnly("org.projectlombok:lombok:1.18.26")
+    annotationProcessor("org.projectlombok:lombok:1.18.26")
+    annotationProcessor("org.springframework.boot:spring-boot-configuration-processor:3.0.4")
+    implementation("org.springframework.boot:spring-boot-starter-web:3.0.4")
 }
 
 tasks.withType<Test> {
@@ -53,3 +55,9 @@ publishing {
         }
     }
 }
+
+val jar: Jar by tasks
+val bootJar: BootJar by tasks
+
+bootJar.enabled = false
+jar.enabled = true
