@@ -29,7 +29,7 @@ dependencies {
     implementation("com.nimbusds:nimbus-jose-jwt:9.31")
     compileOnly("org.projectlombok:lombok:1.18.24")
     annotationProcessor("org.projectlombok:lombok:1.18.24")
-    annotationProcessor ("org.springframework.boot:spring-boot-configuration-processor:3.0.0")
+    annotationProcessor("org.springframework.boot:spring-boot-configuration-processor:3.0.0")
     implementation("org.springframework.boot:spring-boot-starter-web:3.0.0")
 }
 

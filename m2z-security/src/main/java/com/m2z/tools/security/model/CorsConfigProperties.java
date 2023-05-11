@@ -5,5 +5,4 @@ import org.springframework.boot.context.properties.ConfigurationPropertiesScan;
 
 @ConfigurationProperties(prefix = "ms.cors")
 @ConfigurationPropertiesScan
-public record CorsConfigProperties (String[] origins) {
-}
+public record CorsConfigProperties(String[] origins) {}

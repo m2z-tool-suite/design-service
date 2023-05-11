@@ -10,7 +10,8 @@ import java.time.format.DateTimeFormatter;
 
 class LocalDateTimeSerializer extends JsonSerializer<LocalDateTime> {
     @Override
-    public void serialize(LocalDateTime value, JsonGenerator gen, SerializerProvider serializers) throws IOException {
+    public void serialize(LocalDateTime value, JsonGenerator gen, SerializerProvider serializers)
+            throws IOException {
         if (value == null) {
             gen.writeNull();
         } else {

@@ -1,12 +1,12 @@
 package com.m2z.tools.security.config;
 
 import com.m2z.tools.security.model.CorsConfigProperties;
+
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.web.servlet.config.annotation.CorsRegistration;
 import org.springframework.web.servlet.config.annotation.CorsRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
-
 
 /*
 Sets allowed origins for prod and development.

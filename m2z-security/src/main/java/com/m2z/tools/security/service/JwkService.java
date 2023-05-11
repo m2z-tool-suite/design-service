@@ -6,5 +6,6 @@ import com.m2z.tools.security.model.PrincipleUser;
 
 public interface JwkService {
 
-    PrincipleUser process(final String idToken) throws BadTokenException, InternalTokenProcessingException;
+    PrincipleUser process(final String idToken)
+            throws BadTokenException, InternalTokenProcessingException;
 }

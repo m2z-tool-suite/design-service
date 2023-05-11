@@ -4,6 +4,7 @@ import com.m2z.tools.designservice.dto.RequirementPriorityDTO;
 import com.m2z.tools.designservice.mapper.RequirementPriorityMapper;
 import com.m2z.tools.designservice.model.RequirementPriority;
 import com.m2z.tools.designservice.repository.RequirementPriorityRepository;
+
 import org.springframework.stereotype.Service;
 
 @Service

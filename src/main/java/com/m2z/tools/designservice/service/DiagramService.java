@@ -4,6 +4,9 @@ import com.m2z.tools.designservice.dto.DiagramDTO;
 import com.m2z.tools.designservice.mapper.DiagramMapper;
 import com.m2z.tools.designservice.model.Diagram;
 import com.m2z.tools.designservice.repository.DiagramRepository;
+
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
 @Service
@@ -15,5 +18,11 @@ public class DiagramService extends BaseService<Diagram, DiagramDTO, Long> {
         super(repository, mapper);
         this.repository = repository;
         this.mapper = mapper;
+    }
+
+    public Page<DiagramDTO> findAllByProject(Pageable pageable, String search, String project) {
+        return repository
+                .findContainingByProject(pageable, "%" + search + "%", project)
+                .map(mapper::toDTO);
     }
 }

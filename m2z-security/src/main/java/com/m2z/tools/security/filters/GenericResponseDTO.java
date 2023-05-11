@@ -1,6 +1,7 @@
 package com.m2z.tools.security.filters;
 
 import lombok.Getter;
+
 import org.springframework.http.HttpStatus;
 
 import java.time.LocalDateTime;
@@ -9,8 +10,9 @@ class GenericResponseDTO {
 
     @Getter private final String message;
     @Getter private final int statusCode;
+
     @Getter
-//    @JsonSerialize(using = LocalDateTimeSerializer.class)
+    //    @JsonSerialize(using = LocalDateTimeSerializer.class)
     private final LocalDateTime time;
 
     private GenericResponseDTO(String message, int statusCode, LocalDateTime time) {
@@ -47,7 +49,8 @@ class GenericResponseDTO {
         return createWithDefaultTime("Requested resource not found", HttpStatus.NOT_FOUND.value());
     }
 
-    private static GenericResponseDTO createWithDefaultTime(final String message, final int statusCode) {
+    private static GenericResponseDTO createWithDefaultTime(
+            final String message, final int statusCode) {
         return new GenericResponseDTO(message, statusCode);
     }
 }

@@ -4,6 +4,7 @@ import com.m2z.tools.designservice.dto.RequirementTypeDTO;
 import com.m2z.tools.designservice.mapper.RequirementTypeMapper;
 import com.m2z.tools.designservice.model.RequirementType;
 import com.m2z.tools.designservice.repository.RequirementTypeRepository;
+
 import org.springframework.stereotype.Service;
 
 @Service
