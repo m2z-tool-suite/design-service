@@ -21,14 +21,15 @@ configurations {
 
 repositories {
     mavenCentral()
+    maven { setUrl("https://jitpack.io") }
 }
 
 dependencies {
+    implementation("com.github.m2z-tool-suite:m2z-security:1.0.2")
     implementation("org.springframework.boot:spring-boot-starter-web")
     implementation("org.springframework.boot:spring-boot-starter-data-jpa")
     implementation("org.springframework.boot:spring-boot-starter-validation")
     implementation("org.springdoc:springdoc-openapi-starter-webmvc-ui:2.0.4")
-    implementation(project(":m2z-security"))
     compileOnly("org.projectlombok:lombok")
     implementation("org.mapstruct:mapstruct:1.5.3.Final")
     runtimeOnly("com.mysql:mysql-connector-j")
