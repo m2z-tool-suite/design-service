@@ -27,10 +27,11 @@ repositories {
 }
 
 dependencies {
-    implementation("com.github.m2z-tool-suite:m2z-security:1.0.3")
+    implementation("com.github.m2z-tool-suite:m2z-security:1.0.5")
     implementation("org.springframework.boot:spring-boot-starter-web")
     implementation("org.springframework.boot:spring-boot-starter-data-jpa")
     implementation("org.springframework.boot:spring-boot-starter-validation")
+    implementation("org.springframework.boot:spring-boot-starter-security")
     implementation("org.springdoc:springdoc-openapi-starter-webmvc-ui:2.0.4")
     compileOnly("org.projectlombok:lombok")
     implementation("org.mapstruct:mapstruct:1.5.3.Final")
