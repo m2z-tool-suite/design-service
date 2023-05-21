@@ -1,16 +1,28 @@
 version: '3.8'
 
 services:
-  database:
+  mysql:
     image: mysql:8.0-debian
     restart: always
     ports:
       - '3306:3306'
     volumes:
-      - database:/var/lib/mysql
+      - mysql:/var/lib/mysql
     environment:
       MYSQL_ROOT_PASSWORD: root
       MYSQL_DATABASE: m2z-design
 
+  mongo:
+    image: mongo:4.2
+    restart: always
+    ports:
+      - '27017:27017'
+    volumes:
+      - mongo:/data/db
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: root
+      MONGO_INITDB_ROOT_PASSWORD: root
+
 volumes:
-  database:
+  mysql:
+  mongo:
