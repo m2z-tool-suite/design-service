@@ -22,7 +22,7 @@ services:
       PMA_PORT: 3306
 
   mongo:
-    image: mongo:4.2
+    image: mongo
     restart: always
     ports:
       - '27017:27017'
