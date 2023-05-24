@@ -1,6 +1,9 @@
 package com.m2z.tools.designservice.service.diagram;
 
+import static com.m2z.tools.designservice.util.SecurityUtil.getProjects;
+
 import com.m2z.tools.designservice.dto.diagram.ClassDTO;
+import com.m2z.tools.designservice.exception.ForbiddenException;
 import com.m2z.tools.designservice.exception.NotFoundException;
 import com.m2z.tools.designservice.mapper.diagram.ClassMapper;
 import com.m2z.tools.designservice.model.diagram.Class;
@@ -13,6 +16,7 @@ import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.util.HashMap;
 import java.util.List;
 import java.util.Set;
 
@@ -36,6 +40,16 @@ public class ClassService {
             throw new NotFoundException("ID not found");
         }
         return mapper.toDTO((List<Class>) repository.findAllById(ids));
+    }
+
+    public Page<ClassDTO> findAllByProject(Pageable pageable, String search, String projectId) {
+        HashMap<String, String> projects = getProjects();
+        if (!projects.containsKey(projectId)) {
+            throw new ForbiddenException("Not allowed to access this project's classes");
+        }
+        return repository
+                .findContainingByProject(pageable, "%" + search + "%", projectId)
+                .map(mapper::toDTO);
     }
 
     @Transactional

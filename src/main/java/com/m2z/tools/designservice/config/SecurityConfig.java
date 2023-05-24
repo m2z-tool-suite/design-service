@@ -18,7 +18,7 @@ import org.springframework.security.web.SecurityFilterChain;
 import org.springframework.security.web.authentication.www.BasicAuthenticationFilter;
 
 @Configuration
-@EnableMethodSecurity(prePostEnabled = true)
+@EnableMethodSecurity
 @EnableWebSecurity
 @RequiredArgsConstructor
 @Slf4j
@@ -34,16 +34,40 @@ public class SecurityConfig {
                         "/api/requirements/all",
                         "/api/requirements",
                         "/api/diagrams/all",
-                        "/api/diagrams").hasAuthority(ROLE_ROOT)
+                        "/api/diagrams",
+                        "/api/classes/all",
+                        "/api/classes",
+                        "/api/classes/*",
+                        "/api/properties/all",
+                        "/api/properties",
+                        "/api/properties/*",
+                        "/api/methods/all",
+                        "/api/methods",
+                        "/api/methods/*",
+                        "/api/parameters/all",
+                        "/api/parameters",
+                        "/api/parameters/*",
+                        "/api/relationships/all",
+                        "/api/relationships",
+                        "/api/relationships/*").hasAuthority(ROLE_ROOT)
                 .requestMatchers(
                         "/api/requirements/**",
                         "/api/diagrams/**").authenticated()
+                .requestMatchers(
+                        "/api/classes/**",
+                        "/api/properties/**",
+                        "/api/methods/**",
+                        "/api/parameters/**",
+                        "/api/relationships/**").authenticated()
                 .requestMatchers(
                         HttpMethod.GET,
                         "/api/requirement-priorities/**",
                         "/api/requirement-risks/**",
                         "/api/requirement-statuses/**",
-                        "/api/requirement-types/**").authenticated()
+                        "/api/requirement-types/**",
+                        "/api/class-types/**",
+                        "/api/access-types/**",
+                        "/api/relationship-types/**").authenticated()
                 .anyRequest().hasAuthority(ROLE_ADMIN)
                 .and()
                 .sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS)

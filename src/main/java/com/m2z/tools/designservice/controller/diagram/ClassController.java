@@ -39,6 +39,14 @@ public class ClassController {
         return new ResponseEntity<>(service.findById(id), HttpStatus.OK);
     }
 
+    @GetMapping("/project/{id}")
+    public ResponseEntity<Page<ClassDTO>> getAllByProject(
+            @ParameterObject Pageable pageable,
+            @RequestParam(defaultValue = "") String search,
+            @PathVariable String id) {
+        return new ResponseEntity<>(service.findAllByProject(pageable, search, id), HttpStatus.OK);
+    }
+
     @PostMapping
     public ResponseEntity<ClassDTO> create(@Valid @RequestBody ClassDTO DTO) {
         DTO.setId(null);

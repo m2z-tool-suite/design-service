@@ -42,6 +42,14 @@ public interface ClassRepository extends CrudRepository<Class, String> {
 
     @Query(
             value =
-                    "select x from #{#entityName} x where x.deleted = false and cast(x.id as string) like :search")
+                    "select x from #{#entityName} x where x.deleted = false and "
+                            + "(x.id like :search or x.name like :search)")
     Page<Class> findContaining(Pageable pageable, @Param("search") String search);
+
+    @Query(
+            value =
+                    "select x from #{#entityName} x where x.deleted = false and x.diagram.project = :project and "
+                            + "(x.id like :search or x.name like :search)")
+    Page<Class> findContainingByProject(
+            Pageable pageable, @Param("search") String search, @Param("project") String project);
 }

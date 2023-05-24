@@ -2,15 +2,15 @@ package com.m2z.tools.designservice.model.diagram;
 
 import com.m2z.tools.designservice.model.BaseEntity;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.Lob;
-import jakarta.persistence.OneToMany;
+import jakarta.persistence.*;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+
+import org.hibernate.annotations.OnDelete;
+import org.hibernate.annotations.OnDeleteAction;
 
 import java.util.List;
 
@@ -34,6 +34,7 @@ public class Diagram extends BaseEntity<Long> {
     @Column(columnDefinition = "LONGTEXT")
     private String data;
 
-    @OneToMany(mappedBy = "diagram")
+    @OneToMany(mappedBy = "diagram", cascade = CascadeType.ALL)
+    @OnDelete(action = OnDeleteAction.CASCADE)
     private List<Class> classes;
 }

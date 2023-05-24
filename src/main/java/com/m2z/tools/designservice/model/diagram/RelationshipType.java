@@ -9,6 +9,9 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
+import org.hibernate.annotations.OnDelete;
+import org.hibernate.annotations.OnDeleteAction;
+
 import java.util.List;
 
 @Entity
@@ -20,6 +23,7 @@ public class RelationshipType extends BaseEntity<Long> {
     @Column(name = "name_", nullable = false, unique = true)
     private String name;
 
-    @OneToMany(mappedBy = "relationshipType")
+    @OneToMany(mappedBy = "relationshipType", cascade = CascadeType.ALL)
+    @OnDelete(action = OnDeleteAction.CASCADE)
     private List<Relationship> relationships;
 }
