@@ -12,6 +12,7 @@ import lombok.Setter;
 import org.hibernate.annotations.OnDelete;
 import org.hibernate.annotations.OnDeleteAction;
 
+import java.util.ArrayList;
 import java.util.List;
 
 @Entity
@@ -25,5 +26,5 @@ public class RelationshipType extends BaseEntity<Long> {
 
     @OneToMany(mappedBy = "relationshipType", cascade = CascadeType.ALL)
     @OnDelete(action = OnDeleteAction.CASCADE)
-    private List<Relationship> relationships;
+    private List<Relationship> relationships = new ArrayList<>();
 }

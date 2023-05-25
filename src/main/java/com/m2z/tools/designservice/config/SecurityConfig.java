@@ -67,7 +67,10 @@ public class SecurityConfig {
                         "/api/requirement-types/**",
                         "/api/class-types/**",
                         "/api/access-types/**",
-                        "/api/relationship-types/**").authenticated()
+                        "/api/relationship-types/**",
+                        "/api/meta").authenticated()
+                .requestMatchers(
+                        "/api/meta/**").denyAll()
                 .anyRequest().hasAuthority(ROLE_ADMIN)
                 .and()
                 .sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS)

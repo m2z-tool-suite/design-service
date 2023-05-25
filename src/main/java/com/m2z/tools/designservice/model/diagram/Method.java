@@ -12,6 +12,7 @@ import lombok.Setter;
 import org.hibernate.annotations.OnDelete;
 import org.hibernate.annotations.OnDeleteAction;
 
+import java.util.ArrayList;
 import java.util.List;
 
 @Entity
@@ -38,5 +39,5 @@ public class Method extends BaseEntity<Long> {
 
     @OneToMany(mappedBy = "method", cascade = CascadeType.ALL)
     @OnDelete(action = OnDeleteAction.CASCADE)
-    private List<Parameter> parameters;
+    private List<Parameter> parameters = new ArrayList<>();
 }

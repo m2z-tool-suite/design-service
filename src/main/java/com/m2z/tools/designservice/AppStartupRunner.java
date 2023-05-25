@@ -1,5 +1,6 @@
 package com.m2z.tools.designservice;
 
+import com.fasterxml.jackson.databind.ObjectMapper;
 import com.m2z.tools.designservice.dto.diagram.AccessTypeDTO;
 import com.m2z.tools.designservice.dto.diagram.ClassTypeDTO;
 import com.m2z.tools.designservice.dto.diagram.RelationshipTypeDTO;
@@ -7,6 +8,8 @@ import com.m2z.tools.designservice.dto.requirement.RequirementPriorityDTO;
 import com.m2z.tools.designservice.dto.requirement.RequirementRiskDTO;
 import com.m2z.tools.designservice.dto.requirement.RequirementStatusDTO;
 import com.m2z.tools.designservice.dto.requirement.RequirementTypeDTO;
+import com.m2z.tools.designservice.model.meta.Meta;
+import com.m2z.tools.designservice.repository.meta.MetaRepository;
 import com.m2z.tools.designservice.service.diagram.AccessTypeService;
 import com.m2z.tools.designservice.service.diagram.ClassTypeService;
 import com.m2z.tools.designservice.service.diagram.RelationshipTypeService;
@@ -21,6 +24,7 @@ import org.springframework.boot.ApplicationArguments;
 import org.springframework.boot.ApplicationRunner;
 import org.springframework.stereotype.Component;
 
+import java.io.File;
 import java.util.List;
 
 @Component
@@ -36,6 +40,9 @@ public class AppStartupRunner implements ApplicationRunner {
     private final AccessTypeService accessTypeService;
 
     private final RelationshipTypeService relationshipTypeService;
+
+    private final MetaRepository metaRepository;
+
     private final List<String> requirementTypes = List.of("Functional", "Nonfunctional");
     private final List<String> requirementPriorities =
             List.of("Essential", "Very desirable", "Desirable", "Optional", "Undesirable");
@@ -84,6 +91,25 @@ public class AppStartupRunner implements ApplicationRunner {
         if (relationshipTypeService.findAll().isEmpty()) {
             relationshipTypes.forEach(
                     type -> relationshipTypeService.forceSave(new RelationshipTypeDTO(type)));
+        }
+
+        if (((List<Meta>) metaRepository.findAll()).isEmpty()) {
+            loadMeta();
+        }
+    }
+
+    private void loadMeta() {
+        try {
+            ObjectMapper objectMapper = new ObjectMapper();
+            File file = new File("src/main/resources/database/meta.json");
+            Meta[] metas = objectMapper.readValue(file, Meta[].class);
+            for (Meta meta : metas) {
+                meta.getHeaders().forEach(header -> header.setMeta(meta));
+                meta.getChildren().forEach(child -> child.setMeta(meta));
+                metaRepository.save(meta);
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
         }
     }
 }

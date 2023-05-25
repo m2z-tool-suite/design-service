@@ -10,6 +10,7 @@ import lombok.Setter;
 import org.hibernate.annotations.OnDelete;
 import org.hibernate.annotations.OnDeleteAction;
 
+import java.util.ArrayList;
 import java.util.List;
 
 @Entity
@@ -37,17 +38,17 @@ public class Class {
 
     @OneToMany(mappedBy = "class_", cascade = CascadeType.ALL)
     @OnDelete(action = OnDeleteAction.CASCADE)
-    private List<Property> properties;
+    private List<Property> properties = new ArrayList<>();
 
     @OneToMany(mappedBy = "class_", cascade = CascadeType.ALL)
     @OnDelete(action = OnDeleteAction.CASCADE)
-    private List<Method> methods;
+    private List<Method> methods = new ArrayList<>();
 
     @OneToMany(mappedBy = "parentClass", cascade = CascadeType.ALL)
     @OnDelete(action = OnDeleteAction.CASCADE)
-    private List<Relationship> parentRelationships;
+    private List<Relationship> parentRelationships = new ArrayList<>();
 
     @OneToMany(mappedBy = "childClass", cascade = CascadeType.ALL)
     @OnDelete(action = OnDeleteAction.CASCADE)
-    private List<Relationship> childRelationships;
+    private List<Relationship> childRelationships = new ArrayList<>();
 }

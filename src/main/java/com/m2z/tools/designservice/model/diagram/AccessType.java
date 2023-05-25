@@ -12,6 +12,7 @@ import lombok.Setter;
 import org.hibernate.annotations.OnDelete;
 import org.hibernate.annotations.OnDeleteAction;
 
+import java.util.ArrayList;
 import java.util.List;
 
 @Entity
@@ -25,9 +26,9 @@ public class AccessType extends BaseEntity<Long> {
 
     @OneToMany(mappedBy = "accessType", cascade = CascadeType.ALL)
     @OnDelete(action = OnDeleteAction.CASCADE)
-    private List<Property> properties;
+    private List<Property> properties = new ArrayList<>();
 
     @OneToMany(mappedBy = "accessType", cascade = CascadeType.ALL)
     @OnDelete(action = OnDeleteAction.CASCADE)
-    private List<Method> methods;
+    private List<Method> methods = new ArrayList<>();
 }
