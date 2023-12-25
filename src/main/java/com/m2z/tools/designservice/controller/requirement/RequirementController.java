@@ -1,11 +1,11 @@
 package com.m2z.tools.designservice.controller.requirement;
 
-import com.m2z.tools.designservice.controller.BaseController;
 import com.m2z.tools.designservice.dto.requirement.RequirementDTO;
 import com.m2z.tools.designservice.model.requirement.Requirement;
 import com.m2z.tools.designservice.service.requirement.RequirementService;
+import com.m2z.tools.shared.controller.BaseController;
 
-import org.springdoc.core.annotations.ParameterObject;
+import org.springdoc.api.annotations.ParameterObject;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.http.HttpStatus;

@@ -1,6 +1,6 @@
 package com.m2z.tools.designservice.dto.diagram;
 
-import com.m2z.tools.designservice.dto.BaseDTO;
+import com.m2z.tools.shared.dto.BaseDTO;
 
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;

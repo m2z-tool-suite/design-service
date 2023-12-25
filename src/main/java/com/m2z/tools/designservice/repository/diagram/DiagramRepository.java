@@ -1,7 +1,7 @@
 package com.m2z.tools.designservice.repository.diagram;
 
 import com.m2z.tools.designservice.model.diagram.Diagram;
-import com.m2z.tools.designservice.repository.BaseRepository;
+import com.m2z.tools.shared.repository.BaseRepository;
 
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;

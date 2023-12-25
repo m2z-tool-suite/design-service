@@ -1,9 +1,9 @@
 package com.m2z.tools.designservice.controller.diagram;
 
-import com.m2z.tools.designservice.controller.BaseController;
 import com.m2z.tools.designservice.dto.diagram.RelationshipTypeDTO;
 import com.m2z.tools.designservice.model.diagram.RelationshipType;
 import com.m2z.tools.designservice.service.diagram.RelationshipTypeService;
+import com.m2z.tools.shared.controller.BaseController;
 
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;

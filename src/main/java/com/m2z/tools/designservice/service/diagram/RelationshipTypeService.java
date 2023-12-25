@@ -4,7 +4,7 @@ import com.m2z.tools.designservice.dto.diagram.RelationshipTypeDTO;
 import com.m2z.tools.designservice.mapper.diagram.RelationshipTypeMapper;
 import com.m2z.tools.designservice.model.diagram.RelationshipType;
 import com.m2z.tools.designservice.repository.diagram.RelationshipTypeRepository;
-import com.m2z.tools.designservice.service.BaseService;
+import com.m2z.tools.shared.service.BaseService;
 
 import org.springframework.stereotype.Service;
 

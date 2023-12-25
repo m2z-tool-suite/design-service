@@ -1,6 +1,6 @@
 package com.m2z.tools.designservice.model.diagram;
 
-import com.m2z.tools.designservice.model.BaseEntity;
+import com.m2z.tools.shared.model.BaseEntity;
 
 import jakarta.persistence.*;
 

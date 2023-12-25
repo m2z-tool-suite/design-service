@@ -1,7 +1,7 @@
 package com.m2z.tools.designservice.repository.requirement;
 
 import com.m2z.tools.designservice.model.requirement.RequirementPriority;
-import com.m2z.tools.designservice.repository.BaseRepository;
+import com.m2z.tools.shared.repository.BaseRepository;
 
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;

@@ -4,7 +4,7 @@ import com.m2z.tools.designservice.dto.requirement.RequirementRiskDTO;
 import com.m2z.tools.designservice.mapper.requirement.RequirementRiskMapper;
 import com.m2z.tools.designservice.model.requirement.RequirementRisk;
 import com.m2z.tools.designservice.repository.requirement.RequirementRiskRepository;
-import com.m2z.tools.designservice.service.BaseService;
+import com.m2z.tools.shared.service.BaseService;
 
 import org.springframework.stereotype.Service;
 

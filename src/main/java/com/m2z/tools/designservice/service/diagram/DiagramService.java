@@ -1,13 +1,13 @@
 package com.m2z.tools.designservice.service.diagram;
 
-import static com.m2z.tools.designservice.util.SecurityUtil.*;
+import static com.m2z.tools.security.util.SecurityUtil.*;
 
 import com.m2z.tools.designservice.dto.diagram.DiagramDTO;
-import com.m2z.tools.designservice.exception.ForbiddenException;
 import com.m2z.tools.designservice.mapper.diagram.DiagramMapper;
 import com.m2z.tools.designservice.model.diagram.Diagram;
 import com.m2z.tools.designservice.repository.diagram.DiagramRepository;
-import com.m2z.tools.designservice.service.BaseService;
+import com.m2z.tools.shared.exception.ForbiddenException;
+import com.m2z.tools.shared.service.BaseService;
 
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;

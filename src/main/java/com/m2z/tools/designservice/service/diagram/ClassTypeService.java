@@ -4,7 +4,7 @@ import com.m2z.tools.designservice.dto.diagram.ClassTypeDTO;
 import com.m2z.tools.designservice.mapper.diagram.ClassTypeMapper;
 import com.m2z.tools.designservice.model.diagram.ClassType;
 import com.m2z.tools.designservice.repository.diagram.ClassTypeRepository;
-import com.m2z.tools.designservice.service.BaseService;
+import com.m2z.tools.shared.service.BaseService;
 
 import org.springframework.stereotype.Service;
 

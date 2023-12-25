@@ -1,6 +1,6 @@
 package com.m2z.tools.designservice.model.requirement;
 
-import com.m2z.tools.designservice.model.BaseEntity;
+import com.m2z.tools.shared.model.BaseEntity;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;

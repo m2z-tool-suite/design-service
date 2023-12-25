@@ -4,7 +4,7 @@ import com.m2z.tools.designservice.dto.diagram.AccessTypeDTO;
 import com.m2z.tools.designservice.mapper.diagram.AccessTypeMapper;
 import com.m2z.tools.designservice.model.diagram.AccessType;
 import com.m2z.tools.designservice.repository.diagram.AccessTypeRepository;
-import com.m2z.tools.designservice.service.BaseService;
+import com.m2z.tools.shared.service.BaseService;
 
 import org.springframework.stereotype.Service;
 

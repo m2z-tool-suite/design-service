@@ -1,13 +1,13 @@
 package com.m2z.tools.designservice.service.requirement;
 
-import static com.m2z.tools.designservice.util.SecurityUtil.*;
+import static com.m2z.tools.security.util.SecurityUtil.*;
 
 import com.m2z.tools.designservice.dto.requirement.RequirementDTO;
-import com.m2z.tools.designservice.exception.ForbiddenException;
 import com.m2z.tools.designservice.mapper.requirement.RequirementMapper;
 import com.m2z.tools.designservice.model.requirement.Requirement;
 import com.m2z.tools.designservice.repository.requirement.RequirementRepository;
-import com.m2z.tools.designservice.service.BaseService;
+import com.m2z.tools.shared.exception.ForbiddenException;
+import com.m2z.tools.shared.service.BaseService;
 
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
